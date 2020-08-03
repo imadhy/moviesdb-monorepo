@@ -1,0 +1,52 @@
+---
+resource_types:
+  - name: npm-cache
+    type: docker-image
+    source:
+      repository: ymedlop/npm-cache-resource
+      tag: 'latest'
+
+resources:
+  - name: angular-monorepo-concourse
+    type: git
+    source: &source
+      uri: 'https://github.com/imadhy/angular-monorepo-concourse.git'
+      branch: master
+  - name: npm-cache
+    type: npm-cache
+    source:
+      <<: *source
+
+jobs:
+  - name: cache
+    plan:
+      - get: angular-monorepo-concourse
+        trigger: true
+      - get: npm-cache
+  - name: unit-test
+    plan:
+      - get: angular-monorepo-concourse
+        trigger: true
+        passed: [cache]
+      - get: npm-cache
+        passed: [cache]
+      - task: test
+        file: angular-monorepo-concourse/ci/test.yml
+  - name: build-pn106
+    plan:
+      - get: angular-monorepo-concourse
+        trigger: true
+        passed: [unit-test]
+      - get: npm-cache
+        passed: [unit-test]
+      - task: run build
+        file: angular-monorepo-concourse/ci/build_pn106.yml
+  - name: build-pn107
+    plan:
+      - get: angular-monorepo-concourse
+        trigger: true
+        passed: [unit-test]
+      - get: npm-cache
+        passed: [unit-test]
+      - task: run build
+        file: angular-monorepo-concourse/ci/build_pn107.yml

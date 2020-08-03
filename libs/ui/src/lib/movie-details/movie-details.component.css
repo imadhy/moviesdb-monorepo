@@ -1,0 +1,36 @@
+.movie-details {
+  margin: 15px auto;
+  width: 90%;
+  -webkit-box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96), 0px 10px 10px -5px rgba(138,138,138,1);
+  -moz-box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96), 0px 10px 10px -5px rgba(138,138,138,1);
+  box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96), 0px 10px 10px -5px rgba(138,138,138,1);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow : -moz-scrollbars-horizontal;
+  background-color: #000000cf;
+  border: 3px solid #db000085;
+}
+
+.detail-info {
+  color: #fff;
+  margin-left: 35px;
+}
+
+/* .detail-title {
+  width: 300px;
+} */
+
+.detail-overview {
+  padding-top: 15px;
+}
+
+.title-extra {
+  display: flex;
+}
+
+.title-extra span:not(:first-child) {
+  padding-left: 15px;
+}

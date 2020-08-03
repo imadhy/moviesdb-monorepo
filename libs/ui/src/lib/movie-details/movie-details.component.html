@@ -1,0 +1,27 @@
+<div class="movie-details">
+  <div class="detail-img">
+    <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}"/>
+  </div>
+
+  <div class="detail-info">
+    <div class="detail-title">
+      <h2>{{ movie.title }}</h2>
+      <h6>🗓 {{ movie.release_date }}</h6>
+      <div class=title-extra>
+        <span>⌛️ {{ movie.runtime }} minutes</span>
+        <span>⭐️ {{ movie.vote_average }}</span>
+      </div>
+    </div>
+    
+    <div class="detail-overview">
+      <p>{{ movie.overview }}</p>
+    </div>
+
+    <div class="detail-extra">
+      Genre :
+      <span *ngFor="let genre of movie.genres; let i = index">
+        {{ genre.name }}{{ i < movie.genres.length - 1 ? ','  : '' }}
+      </span>
+    </div>
+  </div>
+</div>

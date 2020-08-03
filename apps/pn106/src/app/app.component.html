@@ -1,0 +1,14 @@
+<monorepo-project-search-bar
+  (moviesResult)="moviesResult($event)"
+></monorepo-project-search-bar>
+
+<monorepo-project-movie-carrousel
+  *ngIf="moviesResult$ | async as movies" 
+  [listOfMovies]="movies"
+  (selectedElement)="setMovie($event)"
+></monorepo-project-movie-carrousel>
+
+<monorepo-project-movie-details 
+  *ngIf="selectedMovie$ | async as movie" 
+  [movie]="movie" 
+></monorepo-project-movie-details>

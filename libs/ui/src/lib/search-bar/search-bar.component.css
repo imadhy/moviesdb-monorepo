@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  font-family: sans-serif;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 7px;
+  border: 3px solid #db000085;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 80%;
+  caret-color: red;
+  line-height: 40px;
+  padding: 0 10px;
+  transition: width 0.4s linear;
+}
+
+.searchbar > .search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #e74c3c;
+  background: white;
+}

@@ -1,0 +1,13 @@
+<div class="searchbar">
+  <input
+    class="search_input"
+    type="text"
+    name=""
+    placeholder="Search a movie or series"
+    [(ngModel)]="q"
+    (keydown.enter)="searchMovie()"
+  />
+  <a class="search_icon" (click)="searchMovie()"
+    ><i class="fas fa-search"></i
+  ></a>
+</div>

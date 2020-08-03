@@ -1,0 +1,50 @@
+.movie-carrousel {
+  margin: 0 auto;
+  width: 90%;
+  -webkit-box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96),
+    0px 10px 10px -5px rgba(138, 138, 138, 1);
+  -moz-box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96),
+    0px 10px 10px -5px rgba(138, 138, 138, 1);
+  box-shadow: inset 0px 5px 15px 1px rgba(0, 0, 0, 0.96),
+    0px 10px 10px -5px rgba(138, 138, 138, 1);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow: -moz-scrollbars-horizontal;
+  height: 200px;
+  background-color: #000000cf;
+  border: 3px solid #db000085;
+}
+
+img {
+  display: block;
+  max-width: 330px;
+  max-height: 195px;
+  width: auto;
+  height: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  opacity: 0.7;
+}
+
+img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.scroll4::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+.scroll4::-webkit-scrollbar-track {
+  background: none;
+  margin: 0 8px 0 8px;
+  border-radius: 20px;
+}
+.scroll4::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
+}
